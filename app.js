@@ -16,7 +16,7 @@ const ratelimitВb = new Map()
 app.use(ratelimit({
   driver: 'memory',
   db: ratelimitВb,
-  duration: 1000 * 55,
+  duration: 1000 * 5,
   errorMessage: {
     ok: false,
     error: {
@@ -30,7 +30,7 @@ app.use(ratelimit({
     reset: 'Rate-Limit-Reset',
     total: 'Rate-Limit-Total'
   },
-  max: 20,
+  max: 2000,
   disableHeader: false,
   whitelist: (ctx) => {
     return ctx.query.botToken === process.env.BOT_TOKEN
