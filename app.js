@@ -41,6 +41,8 @@ app.use(ratelimit({
 
 app.use(require('./helpers').helpersApi)
 
+app.get('/status', () => { return 200; })
+
 const route = new Router()
 
 const routes = require('./routes')
