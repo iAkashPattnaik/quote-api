@@ -45,7 +45,7 @@ const route = new Router()
 
 const routes = require('./routes')
 
-route.get('/status', (ctx, next) {
+route.get('/status', (ctx, next) => {
   ctx.body = 200;
   next();
 })
